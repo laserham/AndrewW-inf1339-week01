@@ -33,7 +33,7 @@ document.getElementById("Illuminate_output").innerHTML='done'
 
 function bin2ssd(binary) {
     
-    var w= false
+    var w = false
     var x = false
     var y = false
     var z = false
@@ -41,14 +41,14 @@ function bin2ssd(binary) {
     if (binary[1] == '1') (x = true)
     if (binary[2] == '1') (y = true)
     if (binary[3] == '1') (z = true)
-    var a = true
+    var a = !w&x&Z ||w&!x&!y || !x&!y&!z || !w&y
     var b = false
     var c = false
     var d = false
     var e = false
     var f = false
     var g = false
-    if output = ''
+    var output = ''
     if (a) (output = output + '1') else (output = output + '0')
     if (b) (output = output + '1') else (output = output + '0')
     if (c) (output = output + '1') else (output = output + '0')
@@ -83,8 +83,7 @@ return(output)
 <body>
     <table class="standardTable">
         <tr> 
-            <td class="blackbox"><h3>Keypad</h3>
-                
+<td class="blackbox"><h3>Keypad</h3>            
 <button type="button"
 onclick=display(1)>1</button>
 <button type="button"
@@ -110,13 +109,13 @@ onclick=display(0)>0</button>
             <p id=decimal_input>???</p>
             <p id="binary_output">???</p></td>
             
-            <td class="blackbox">Binary to SSD signals
-            <p id="binary2ssd_input">???</p>
-            <p id="binary2ssd_output">???</p></td>
+            <td class="blackbox"><h3>Binary to SSD signals</h3>
+            <p id="binary2ssd_input"></p>
+            <p id="binary2ssd_output"></p></td>
             
-            <td class="blackbox">Illuminate Segments
-            <p id="illuminate_input">???</p>
-            <p id="illuminate_output"></p>???</td>
+            <td class="blackbox"><h3>Illuminate Segments</h3>
+            <p id="illuminate_input"></p>
+            <p id="illuminate_output"></p></td>
    
 
         </tr>
