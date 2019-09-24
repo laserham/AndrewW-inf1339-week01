@@ -12,7 +12,11 @@
     background-color: black;
     border-color: white;
     color: yellow;
-    }
+    vertical-align: top}
+    .sevenSegmentTable {color: white; border-color: white;
+                        border: solid; border-collapse: collapse;
+}
+    .notsevenSegmentTable {border: none;}
 </style>
 <script>
 function display(number)  {
@@ -106,19 +110,45 @@ onclick=display(9)>9</button><br \>
 <button type="button"
 onclick=display(0)>0</button>
 </td>
-            <td class="blackbox">Decimal to binary
+            <td class="blackbox"><h3>Decimal to binary</h3>
             <p id=decimal_input>???</p>
             <p id="binary_output">???</p></td>
             
-             <td class="blackbox">Binary to SSD signals
+            <td class="blackbox"><h3>Binary to SSD signals</h3>
             <p id="binary2ssd_input"></p>
             <p id="binary2ssd_output"></p></td>
             
-            <td class="blackbox">Illuminate Segments
+            <td class="blackbox"><h3>Illuminate Segments</h3>
             <p id="illuminate_input"></p>
-            <p id="illuminate_output"></p></td>
-   
-
+            <p id="illuminate_output"></p>
+<table>
+<tr>
+<td class="notsevenSegmentTable">1</td>
+<td id="segmentA" class="sevenSegmentTable">A</td>
+<td class="notsevenSegmentTable">3</td>
+</tr> 
+<tr>
+<td id="segmentF" class="sevenSegmentTable">F</td>
+<td class="notsevenSegmentTable">2</td>
+<td id="segmentB" class="sevenSegmentTable">B</td>
+</tr> 
+<tr>
+<td class="notsevenSegmentTable">1</td>
+<td id="segmentG" class="sevenSegmentTable">G</td>
+<td class="notsevenSegmentTable">3</td>
+</tr> 
+<tr>
+<td id="segmentE" class="sevenSegmentTable">E</td>
+<td class="notsevenSegmentTable">2</td>
+<td id="segmentC" class="sevenSegmentTable">C</td>
+</tr> 
+<tr>
+<td class="notsevenSegmentTable">1</td>
+<td id="segmentD" class="sevenSegmentTable">D</td>
+<td class="notsevenSegmentTable">3</td>
+</tr> 
+</table>
+            </td>
         </tr>
     </table>
 
