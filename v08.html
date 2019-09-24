@@ -1,8 +1,7 @@
 <html>
-<body>
-<h3>Version 8 Adding BIN2SSD Functionality</h3>
-</body>
 <head>
+<h3>Version 8 SSD Functionality</h3>
+</head>
 <style>
     .standardTable {border: solid;
         border-collapse: collapse;}
@@ -16,52 +15,54 @@
     }
 </style>
 <script>
-    function display(number)  {
+function display(number)  {
 document.getElementById("decimal_input").innerHTML=number
     var bin = dec2bin2(number)
 document.getElementById("binary_output").innerHTML=bin
         
-document.getElementById("bin2ssd_input").innerHTML=number
+document.getElementById("binary2ssd_input").innerHTML=bin
     var ssd = bin2ssd(bin)
-document.getElementById("bin2ssd_output").innerHTML=ssd
-
-document.getElementById("Illuminate_input").innerHTML=ssd
-    illuminate(ssd)
-document.getElementById("Illuminate_output").innerHTML='done'     
+document.getElementById("binary2ssd_output").innerHTML=ssd
+  
+document.getElementById("illuminate_input").innerHTML=ssd
+illuminate(ssd)
+document.getElementById("illuminate_output").innerHTML='done'     
         
 }
 
 function bin2ssd(binary) {
-    
     var w = false
     var x = false
     var y = false
     var z = false
-    if (binary[0] == '1') (w = true)
-    if (binary[1] == '1') (x = true)
-    if (binary[2] == '1') (y = true)
-    if (binary[3] == '1') (z = true)
-    var a = !w&x&Z ||w&!x&!y || !x&!y&!z || !w&y
-    var b = false
-    var c = false
-    var d = false
-    var e = false
-    var f = false
-    var g = false
-    var output = ''
-    if (a) (output = output + '1') else (output = output + '0')
-    if (b) (output = output + '1') else (output = output + '0')
-    if (c) (output = output + '1') else (output = output + '0')
-    if (d) (output = output + '1') else (output = output + '0')
-    if (e) (output = output + '1') else (output = output + '0')
-    if (f) (output = output + '1') else (output = output + '0')
-    if (g) (output = output + '1') else (output = output + '0')
-    return (output)
-}
-function illuminate () {
-
-}
+    if (binary[0] == '1') {w = true}
+    if (binary[1] == '1') {x = true}
+    if (binary[2] == '1') {y = true}
+    if (binary[3] == '1') {z = true}
+    var a = !w&x&z || w&!x&!y || !x&!y&!z || !w&y
+    var b = !w&!x&!y || w&!x&!y || !w&!y&!z || !w&!x&y || !w&y&z
+        // if this does not work, sub in !w&!x&!y || w&!x&!y
+    var c = !w&!y || !w&z || !w&x&y || w&!y
+    var d = !w&!x&y || !w&y&!z || !x&!y&!z || !w&x&!y&z
+    var e = !w&y&!z || !x&!y&!z
+    var f = !w&!y&!z || !w&x&!y || !w&x&y&!z || w&!x&!y 
+    var g = !w&x&!y || w&!x&!y || !w&!x&y || !w&y&!z
     
+    var output = ''
+    
+    if (a) {output = output + '1'} else {output = output + '0'}
+    if (b) {output = output + '1'} else {output = output + '0'}
+    if (c) {output = output + '1'} else {output = output + '0'}
+    if (d) {output = output + '1'} else {output = output + '0'}
+    if (e) {output = output + '1'} else {output = output + '0'}
+    if (f) {output = output + '1'} else {output = output + '0'}
+    if (g) {output = output + '1'} else {output = output + '0'}
+    return (output)
+}    
+
+function illuminate() {
+    
+}    
     
 function dec2bin2 (decimal) {
     var quotient = decimal
@@ -79,11 +80,11 @@ return(output)
 }
     
 </script>
-</head>
 <body>
     <table class="standardTable">
         <tr> 
-<td class="blackbox"><h3>Keypad</h3>            
+            <td class="blackbox"><h3>Keypad</h3>
+                
 <button type="button"
 onclick=display(1)>1</button>
 <button type="button"
@@ -109,11 +110,11 @@ onclick=display(0)>0</button>
             <p id=decimal_input>???</p>
             <p id="binary_output">???</p></td>
             
-            <td class="blackbox"><h3>Binary to SSD signals</h3>
+             <td class="blackbox">Binary to SSD signals
             <p id="binary2ssd_input"></p>
             <p id="binary2ssd_output"></p></td>
             
-            <td class="blackbox"><h3>Illuminate Segments</h3>
+            <td class="blackbox">Illuminate Segments
             <p id="illuminate_input"></p>
             <p id="illuminate_output"></p></td>
    
