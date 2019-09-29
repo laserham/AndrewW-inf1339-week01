@@ -7,8 +7,8 @@
         border-collapse: collapse;}
     .blackbox {border:solid;
     height: 100px;
-    width: 100x;
-    text-align:center;
+    width: 100px;
+    text-align: center;
     background-color: black;
     border-color: white;
     color: yellow;
@@ -19,7 +19,7 @@
                     border-collapse: collapse;
                     text-align: center;}
     .notsevenSegmentTable {border: none;}
-    .horizontal           {width: 40px; height: 10px;}
+    .horizontal           {width: 40px; height: 15px;}
     .vertical             {width: 10px; height: 40px;}
     .red                  {background-color: red;}
     .black                {background-color: black;}
@@ -27,22 +27,23 @@
     .middle               {width: 40px; height: 40px;}
 </style>
 <script>
+
 function illuminate(singals) {
     document.getElementById("segments").innerHTML = signals
-    if (signals[0] == '1') {
-        document.getElementByID("segmentA").innerHTML ='ON'}
-     if (signals[1] == '1') {
-        document.getElementByID("segmentB").innerHTML ='ON'}
-     if (signals[2] == '1') {
-        document.getElementByID("segmentC").innerHTML ='ON'}
-     if (signals[3] == '1') {
-        document.getElementByID("segmentD").innerHTML ='ON'}
-     if (signals[4] == '1') {
-        document.getElementByID("segmentE").innerHTML ='ON'}
-     if (signals[5] == '1') {
-        document.getElementByID("segmentF").innerHTML ='ON'}
-     if (signals[6] == '1') {
-        document.getElementByID("segmentG").innerHTML ='ON'}
+    if (signals[0] =='1') {
+        document.getElementById("segmentA").innerHTML ='ON'}
+    if (signals[1] =='1') {
+        document.getElementById("segmentB").innerHTML ='ON'}
+    if (signals[2] =='1') {
+        document.getElementById("segmentC").innerHTML ='ON'}
+    if (signals[3] =='1') {
+        document.getElementById("segmentD").innerHTML ='ON'}
+    if (signals[4] =='1') {
+        document.getElementById("segmentE").innerHTML ='ON'}
+    if (signals[5] =='1') {
+        document.getElementById("segmentF").innerHTML ='ON'}
+    if (signals[6] =='1') {
+        document.getElementById("segmentG").innerHTML ='ON'}
 }
     
 function display(number)  {
@@ -144,30 +145,31 @@ onclick=display(0)>0</button>
             <p id="illuminate_input"></p>
             <p id="illuminate_output"></p>
 <table>
-<tr>
-<td class="notsevenSegmentTable corner">1</td>
-<td id="segmentA" class="sevenSegmentTable horizontal">A</td>
-<td class="notsevenSegmentTable corner">3</td>
+    <tr>
+        <td class="notsevenSegmentTable corner"></td>
+        <td id="segmentA" class="sevenSegmentTable horizontal"></td>
+        <td class="notsevenSegmentTable corner"></td>
+</tr> 
+    <tr>
+        <td id="segmentF" 
+            class="sevenSegmentTable vertical"></td>
+        <td class="notsevenSegmentTable middle"></td>
+        <td id="segmentB" class="sevenSegmentTable vertical"></td>
 </tr> 
 <tr>
-<td id="segmentF" class="sevenSegmentTable vertical">F</td>
-<td class="notsevenSegmentTable middle">2</td>
-<td id="segmentB" class="sevenSegmentTable vertical">B</td>
+    <td class="notsevenSegmentTable corner"></td>
+    <td id="segmentG" class="sevenSegmentTable horizontal"></td>
+    <td class="notsevenSegmentTable corner"></td>
+</tr> 
+    <tr>
+        <td id="segmentE" class="sevenSegmentTable vertical"></td>
+        <td class="notsevenSegmentTable middle"></td>
+        <td id="segmentC" class="sevenSegmentTable vertical"></td>
 </tr> 
 <tr>
-<td class="notsevenSegmentTable corner">1</td>
-<td id="segmentG" class="sevenSegmentTable horizontal">G</td>
-<td class="notsevenSegmentTable corner">3</td>
-</tr> 
-<tr>
-<td id="segmentE" class="sevenSegmentTable vertical">E</td>
-<td class="notsevenSegmentTable middle">2</td>
-<td id="segmentC" class="sevenSegmentTable vertical">C</td>
-</tr> 
-<tr>
-<td class="notsevenSegmentTable corner">1</td>
-<td id="segmentD" class="sevenSegmentTable horizontal">D</td>
-<td class="notsevenSegmentTable corner">3</td>
+<td class="notsevenSegmentTable corner"></td>
+<td id="segmentD" class="sevenSegmentTable horizontal"></td>
+<td class="notsevenSegmentTable corner"></td>
 </tr> 
 </table>
             </td>
