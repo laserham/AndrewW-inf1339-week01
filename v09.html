@@ -1,51 +1,29 @@
 <html>
 <head>
-<h3>Version 8 SSD Functionality</h3>
+<h3>Version 9 Final</h3>
 </head>
 <style>
     .standardTable {border: solid;
         border-collapse: collapse;}
     .blackbox {border:solid;
-    height: 100px;
-    width: 100px;
-    text-align: center;
+    height: 125px;
+    width: 125px;
+    text-align:center;
     background-color: black;
     border-color: white;
     color: yellow;
-    vertical-align: top;}
-.sevenSegmentTable {color: white;
-                    border-color: white;
-                    border: solid;
-                    border-collapse: collapse;
-                    text-align: center;}
+    vertical-align: top}
+    .sevenSegmentTable {color: white; border-color: white;
+                        border: solid; border-collapse: collapse;
+        text-align: center;}
     .notsevenSegmentTable {border: none;}
-    .horizontal           {width: 40px; height: 15px;}
+    .horizontal           {width: 40px; height: 10px;}
     .vertical             {width: 10px; height: 40px;}
-    .red                  {background-color: red;}
-    .black                {background-color: black;}
+    .red                  {background-color: red;} 
     .corner               {width: 10px; height: 10px;}
     .middle               {width: 40px; height: 40px;}
 </style>
 <script>
-
-function illuminate(singals) {
-    document.getElementById("segments").innerHTML = signals
-    if (signals[0] =='1') {
-        document.getElementById("segmentA").innerHTML ='ON'}
-    if (signals[1] =='1') {
-        document.getElementById("segmentB").innerHTML ='ON'}
-    if (signals[2] =='1') {
-        document.getElementById("segmentC").innerHTML ='ON'}
-    if (signals[3] =='1') {
-        document.getElementById("segmentD").innerHTML ='ON'}
-    if (signals[4] =='1') {
-        document.getElementById("segmentE").innerHTML ='ON'}
-    if (signals[5] =='1') {
-        document.getElementById("segmentF").innerHTML ='ON'}
-    if (signals[6] =='1') {
-        document.getElementById("segmentG").innerHTML ='ON'}
-}
-    
 function display(number)  {
 document.getElementById("decimal_input").innerHTML=number
     var bin = dec2bin2(number)
@@ -60,7 +38,6 @@ illuminate(ssd)
 document.getElementById("illuminate_output").innerHTML='done'     
         
 }
-
 function bin2ssd(binary) {
     var w = false
     var x = false
@@ -90,7 +67,43 @@ function bin2ssd(binary) {
     if (g) {output = output + '1'} else {output = output + '0'}
     return (output)
 }    
-       
+function illuminate(signals) {   
+    document.getElementById("segments").innerHTML = signals
+    if (signals[0] == '1') {
+        document.getElementByID("segment A").setAttribute("class", "red")}
+    else
+        {document.getElementById("segmentA").setAttribute("class", "black")}
+    
+    if (signals[1] == '1') {
+        document.getElementByID("segment B").setAttribute("class", "red")}
+    else 
+        {document.getElementById("segmentB").setAttribute("class", "black")}
+    
+    if (signals[2] == '1') {
+        document.getElementByID("segment C").setAttribute("class", "red")}
+    else 
+        {document.getElementById("segmentC").setAttribute("class", "black")}
+    
+    if (signals[3] == '1') {
+        document.getElementByID("segment D").setAttribute("class", "red")}
+    else {document.getElementById("segmentD").setAttribute("class", "black")}
+    
+    if (signals[4] == '1') {
+        document.getElementByID("segment E").setAttribute("class", "red")}
+    else 
+        {document.getElementById("segmentE").setAttribute("class", "black")}
+    
+    if (signals[5] == '1') {
+        document.getElementByID("segment F").setAttribute("class", "red")}
+    else 
+        {document.getElementById("segmentF").setAttribute("class", "black")}
+    
+    if (signals[6] == '1') {
+        document.getElementByID("segment G").setAttribute("class", "red")}
+    else {document.getElementById("segmentG").setAttribute("class", "black")}
+
+}    
+    
 function dec2bin2 (decimal) {
     var quotient = decimal
     var output = ''
@@ -142,34 +155,32 @@ onclick=display(0)>0</button>
             <p id="binary2ssd_output"></p></td>
             
             <td class="blackbox"><h3>Illuminate Segments</h3>
-            <p id="illuminate_input"></p>
-            <p id="illuminate_output"></p>
+            <p id="segments"></p>
 <table>
-    <tr>
-        <td class="notsevenSegmentTable corner"></td>
-        <td id="segmentA" class="sevenSegmentTable horizontal"></td>
-        <td class="notsevenSegmentTable corner"></td>
-</tr> 
-    <tr>
-        <td id="segmentF" 
-            class="sevenSegmentTable vertical"></td>
-        <td class="notsevenSegmentTable middle"></td>
-        <td id="segmentB" class="sevenSegmentTable vertical"></td>
+<tr>
+<td class="notsevenSegmentTable corner">1</td>
+<td id="segmentA" class="sevenSegmentTable horizontal"></td>
+<td class="notsevenSegmentTable corner">3</td>
 </tr> 
 <tr>
-    <td class="notsevenSegmentTable corner"></td>
-    <td id="segmentG" class="sevenSegmentTable horizontal"></td>
-    <td class="notsevenSegmentTable corner"></td>
-</tr> 
-    <tr>
-        <td id="segmentE" class="sevenSegmentTable vertical"></td>
-        <td class="notsevenSegmentTable middle"></td>
-        <td id="segmentC" class="sevenSegmentTable vertical"></td>
+<td id="segmentF" class="sevenSegmentTable vertical"></td>
+<td class="notsevenSegmentTable middle">2</td>
+<td id="segmentB" class="sevenSegmentTable vertical"></td>
 </tr> 
 <tr>
-<td class="notsevenSegmentTable corner"></td>
+<td class="notsevenSegmentTable corner">1</td>
+<td id="segmentG" class="sevenSegmentTable horizontal"></td>
+<td class="notsevenSegmentTable corner">3</td>
+</tr> 
+<tr>
+<td id="segmentE" class="sevenSegmentTable vertical"></td>
+<td class="notsevenSegmentTable middle">2</td>
+<td id="segmentC" class="sevenSegmentTable vertical"></td>
+</tr> 
+<tr>
+<td class="notsevenSegmentTable corner">1</td>
 <td id="segmentD" class="sevenSegmentTable horizontal"></td>
-<td class="notsevenSegmentTable corner"></td>
+<td class="notsevenSegmentTable corner">3</td>
 </tr> 
 </table>
             </td>
