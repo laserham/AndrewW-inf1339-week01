@@ -1,4 +1,5 @@
 <html>
+<html>
 <head>
 <h3>Version 9 Final</h3>
 </head>
@@ -19,7 +20,8 @@
     .notsevenSegmentTable {border: none;}
     .horizontal           {width: 40px; height: 10px;}
     .vertical             {width: 10px; height: 40px;}
-    .red                  {background-color: red;} 
+    .red                  {background-color: red;}
+    .black                {background-color: black;}
     .corner               {width: 10px; height: 10px;}
     .middle               {width: 40px; height: 40px;}
 </style>
@@ -32,11 +34,7 @@ document.getElementById("binary_output").innerHTML=bin
 document.getElementById("binary2ssd_input").innerHTML=bin
     var ssd = bin2ssd(bin)
 document.getElementById("binary2ssd_output").innerHTML=ssd
-  
-document.getElementById("illuminate_input").innerHTML=ssd
-illuminate(ssd)
-document.getElementById("illuminate_output").innerHTML='done'     
-        
+    illuminate(ssd)
 }
 function bin2ssd(binary) {
     var w = false
@@ -67,39 +65,38 @@ function bin2ssd(binary) {
     if (g) {output = output + '1'} else {output = output + '0'}
     return (output)
 }    
-function illuminate(signals) {   
-    document.getElementById("segments").innerHTML = signals
-    if (signals[0] == '1') {
-        document.getElementByID("segment A").setAttribute("class", "red")}
+function illuminate(signals) {
+    if (signals[0] == '1') 
+    {document.getElementById("segmentA").setAttribute("class", "red")}
     else
-        {document.getElementById("segmentA").setAttribute("class", "black")}
+    {document.getElementById("segmentA").setAttribute("class", "black")}
     
-    if (signals[1] == '1') {
-        document.getElementByID("segment B").setAttribute("class", "red")}
+    if (signals[1] == '1') 
+    {document.getElementById("segmentB").setAttribute("class", "red")}
     else 
-        {document.getElementById("segmentB").setAttribute("class", "black")}
+    {document.getElementById("segmentB").setAttribute("class", "black")}
     
     if (signals[2] == '1') {
-        document.getElementByID("segment C").setAttribute("class", "red")}
+        document.getElementById("segmentC").setAttribute("class", "red")}
     else 
         {document.getElementById("segmentC").setAttribute("class", "black")}
     
     if (signals[3] == '1') {
-        document.getElementByID("segment D").setAttribute("class", "red")}
+        document.getElementById("segmentD").setAttribute("class", "red")}
     else {document.getElementById("segmentD").setAttribute("class", "black")}
     
     if (signals[4] == '1') {
-        document.getElementByID("segment E").setAttribute("class", "red")}
+        document.getElementById("segmentE").setAttribute("class", "red")}
     else 
         {document.getElementById("segmentE").setAttribute("class", "black")}
     
     if (signals[5] == '1') {
-        document.getElementByID("segment F").setAttribute("class", "red")}
+        document.getElementById("segmentF").setAttribute("class", "red")}
     else 
         {document.getElementById("segmentF").setAttribute("class", "black")}
     
     if (signals[6] == '1') {
-        document.getElementByID("segment G").setAttribute("class", "red")}
+        document.getElementById("segmentG").setAttribute("class", "red")}
     else {document.getElementById("segmentG").setAttribute("class", "black")}
 
 }    
